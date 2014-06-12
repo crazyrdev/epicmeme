@@ -1,7 +1,11 @@
-package com.baruckis.SlidingMenuImplementation;
+package s.p;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.baruckis.SlidingMenuImplementation.R;
+import com.baruckis.SlidingMenuImplementation.SlidingMenuListItem;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +19,7 @@ import android.widget.TextView;
  * @author Andrius Baruckis http://www.baruckis.com
  * 
  */
-public class SlidingMenuListAdapter extends ArrayAdapter<SlidingMenuListItem> {
+public class SlidingMenuListAdapter2 extends ArrayAdapter<SlidingMenuListItem> {
 	private Context context;
 	private int rowViewResourceId;
 	private List<SlidingMenuListItem> slidingMenuItemsList = new ArrayList<SlidingMenuListItem>();
@@ -23,7 +27,7 @@ public class SlidingMenuListAdapter extends ArrayAdapter<SlidingMenuListItem> {
 	private ImageView slidingMenuItemIcon;
 	private TextView slidingMenuItemName;
 
-	public SlidingMenuListAdapter(Context context, int rowViewResourceId,
+	public SlidingMenuListAdapter2(Context context, int rowViewResourceId,
 			List<SlidingMenuListItem> objects) {
 		super(context, rowViewResourceId, objects);
 		this.context = context;

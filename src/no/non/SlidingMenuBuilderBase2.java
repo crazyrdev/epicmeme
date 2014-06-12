@@ -1,10 +1,12 @@
-package com.baruckis.SlidingMenuImplementation.FromClass;
+package no.non;
 
+import lo.l.SlidingMenuListFragment2;
 import android.app.Activity;
 import android.widget.Toast;
 
 import com.baruckis.SlidingMenuImplementation.R;
 import com.baruckis.SlidingMenuImplementation.SlidingMenuListItem;
+//import com.baruckis.SlidingMenuImplementation.FromClass.SlidingMenuListFragment;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 /**
@@ -15,9 +17,10 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
  *         actions.
  * 
  */
-public abstract class SlidingMenuBuilderBase {
+public  class SlidingMenuBuilderBase2 {
 	protected Activity activity;
 	protected SlidingMenu menu = null;
+
 	/**
 	 * This method creates sliding out menu from the left screen side. It uses
 	 * external "SlidingMenu" library for creation. When menu is attached to the
@@ -27,6 +30,7 @@ public abstract class SlidingMenuBuilderBase {
 	 *            This is Activity to which sliding menu is attached.
 	 * 
 	 */
+
 	public void createSlidingMenu(Activity activity) {
 		this.activity = activity;
 		// For actual sliding menu creation we use an external open source
@@ -42,7 +46,7 @@ public abstract class SlidingMenuBuilderBase {
 		menu.attachToActivity(activity, SlidingMenu.SLIDING_WINDOW);
 		menu.setMenu(R.layout.sliding_menu_frame);
 
-		SlidingMenuListFragment slidingMenuListFragment = new SlidingMenuListFragment();
+		SlidingMenuListFragment2 slidingMenuListFragment = new SlidingMenuListFragment2();
 		slidingMenuListFragment.setMenuBuilder(this);
 
 		// We replace a FrameLayout, which is a content of sliding menu, with
@@ -56,34 +60,47 @@ public abstract class SlidingMenuBuilderBase {
 		return menu;
 	}
 
-	// It is our base builder which can be extended, so we can define default
-	// actions, which will be called when we press on separate list items.
-	public void onListItemClick(SlidingMenuListItem selectedSlidingMenuListItem) {
-		CharSequence text;
-		switch (selectedSlidingMenuListItem.Id) {
-		case R.slidingmenu.list_item_angry_id:
-			text = "Clicked item “"
-					+ selectedSlidingMenuListItem.Name
-					+ "”. "
-					+ activity
-							.getString(R.string.toast_sliding_menu_custom_action);
-			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
-			break;
-		case R.slidingmenu.list_item_basic_id:
-			text = "Clicked item “"
-					+ selectedSlidingMenuListItem.Name
-					+ "”. "
-					+ activity
-							.getString(R.string.toast_sliding_menu_custom_action);
-			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
-			break;
-		default:
-			text = "Clicked item. "
-					+ activity
-							.getString(R.string.toast_sliding_menu_no_action_default);
-			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
-			break;
-		}
-	}
+//	// It is our base builder which can be extended, so we can define default
+//	// actions, which will be called when we press on separate list items.
+//	public void onListItemClick(SlidingMenuListItem selectedSlidingMenuListItem) {
+//		CharSequence text;
+//		switch (selectedSlidingMenuListItem.Id) {
+//		case R.slidingmenu.list_item_angry_id:
+//			text = "Clicked item “"
+//					+ selectedSlidingMenuListItem.Name
+//					+ "”. "
+//					+ activity
+//							.getString(R.string.toast_sliding_menu_custom_action);
+//			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
+//			break;
+//		case R.slidingmenu.list_item_basic_id:
+//			text = "Clicked item “"
+//					+ selectedSlidingMenuListItem.Name
+//					+ "”. "
+//					+ activity
+//							.getString(R.string.toast_sliding_menu_custom_action);
+//			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
+//			break;
+//		default:
+//			text = "Clicked item. "
+//					+ activity
+//							.getString(R.string.toast_sliding_menu_no_action_default);
+//			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
+//			break;
+//		}
+//
+//		switch (selectedSlidingMenuListItem.Id) {
+//		case R.slidingmenu.list_item_angry_id:
+//			menu.toggle();
+//
+//			text = "Clicked item “"
+//					+ activity.getString(R.slidingmenu.list_item_angry_label)
+//					+ "”. "
+//					+ activity.getString(R.string.toast_sliding_menu_toggle);
+//			Toast.makeText(activity, text, Toast.LENGTH_LONG).show();
+//
+//			return;
+//		}
+//	}
 
 }
