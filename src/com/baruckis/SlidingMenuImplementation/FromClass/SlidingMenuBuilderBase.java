@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import com.baruckis.SlidingMenuImplementation.R;
 import com.baruckis.SlidingMenuImplementation.SlidingMenuListItem;
-import com.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 /**
  * @author Andrius Baruckis http://www.baruckis.com
@@ -18,7 +18,6 @@ import com.slidingmenu.lib.SlidingMenu;
 public abstract class SlidingMenuBuilderBase {
 	protected Activity activity;
 	protected SlidingMenu menu = null;
-
 	/**
 	 * This method creates sliding out menu from the left screen side. It uses
 	 * external "SlidingMenu" library for creation. When menu is attached to the

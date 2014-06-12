@@ -40,7 +40,7 @@ public class ActivityBase extends Activity {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			if (enableHomeIconActionSlidingMenu() && setSlidingMenu() != null) {
-				slidingMenuBuilderBase.getSlidingMenu().toggle();
+//				slidingMenuBuilderBase.getSlidingMenu().toggle();
 			} else if (enableHomeIconActionBack()) {
 				onCustomBackPressed();
 			}
@@ -66,12 +66,12 @@ public class ActivityBase extends Activity {
 	// If sliding menu is showing, we need to hide it on the first back button
 	// press.
 	private void onCustomBackPressed() {
-		if (setSlidingMenu() != null
-				&& slidingMenuBuilderBase.getSlidingMenu().isMenuShowing()) {
-			slidingMenuBuilderBase.getSlidingMenu().toggle();
-		} else {
-			this.onBackPressed();
-		}
+//		if (setSlidingMenu() != null
+//				&& slidingMenuBuilderBase.getSlidingMenu().isMenuShowing()) {
+//			slidingMenuBuilderBase.getSlidingMenu().toggle();
+//		} else {
+//			this.onBackPressed();
+//		}
 	}
 
 	private void createSlidingMenu() {
