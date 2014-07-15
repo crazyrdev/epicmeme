@@ -1,0 +1,135 @@
+
+Intinya ini aplikasi buat update status
+mesti pake akun dummy sex_zrcjoqp_pistol@tfbnw.net anying
+
+Guide Buatan Gw 
+bikin akun developer https://developers.facebook.com/
+perhatikan API https://developers.facebook.com/docs/reference/android/current
+tutorial itu ngikut https://developers.facebook.com/docs/android/getting-started
+Bikin Akun test
+Bikin Aplikasi
+Masukin Hash Code
+Cocokin Nama Package 
+dan Classnya (class plus package)
+Dapetin Facebook SDK di Github https://github.com/facebook/facebook-android-sdk
+
+Note : lebih enak dapetin hash code via java
+
+--------PART 1--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Facebook
+
+
+cara bikin Keystore kasus facebook pertama 
+
+http://stackoverflow.com/questions/5488339/how-can-i-find-and-run-the-keytool
+
+To get android key hash code follow these steps (for facebook apps)
+
+    Download the openssl for windows here
+    now unzip to c drive
+    open cmd prompt
+    type cd C:\Program Files\Java\jdk1.6.0_26\bin
+    then type only keytool -export -alias myAlias -keystore C:\Users\your user name\.android\myKeyStore | C:\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | C:\openssl-0.9.8k_WIN32\bin\openssl enc -a -e
+    Done
+
+To get Certificate fingerprint(MD5) code follow these steps
+
+    go to - C:\Program Files\Java\jdk1.6.0_26\bin
+    inside the bin folder run the jarsigner.exe file
+    open cmd prompt
+    type cd C:\Program Files\Java\jdk1.6.0_26\bin
+    then again type on cmd keytool -list -keystore "C:/Documents and Settings/your user name/.android/debug.keystore"
+    it will ask for Keystore password now. The default is "android" type and enter
+    Done.
+
+
+openssl https://code.google.com/p/openssl-for-windows/downloads/detail?name=openssl-0.9.8k_WIN32.zip&can=2&q=
+
+http://docs.oracle.com/cd/E19509-01/820-3503/ggezu/index.html
+
+
+Action : 
+
+password : appbocor
+
+test android key generator : 
+keytool -genkey -v -keystore E:\EclipseProyek\bocor\bocor_banget.keystore -alias app_bocor_banget -keyalg RSA -keysize 2048 -validity 10000
+
+
+
+test android key hash 2 : 
+keytool -export -alias myAlias -keystore E:\EclipseProyek\bocor\bocor_banget_v2.keystore | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl enc -a -e
+
+test android key hash 2 hasil : 
+3u6fRwb9tflsk58HHLpb5LjSk0w=
+
+test2 note : 
+E:\EclipseProyek\bocor\bocor_banget_v2.keystore				>>>>>gak ada isinya 
+E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl	>>>>>hasil dari zip
+
+
+
+
+
+
+test MD5 :
+keytool -list -keystore C:\Users\thatfeel\.android\debug.keystore
+password : android
+
+
+
+
+
+test3 bikin keybaru :
+note loe gak punya CA jadinya gagal : 
+http://stackoverflow.com/questions/292732/self-signed-ssl-cert-or-ca
+
+
+keytool -genkey -v -keystore E:\EclipseProyek\bocor\appbocor.keystore -alias appbocor -keyalg RSA -keysize 2048 -validity 10000
+
+Enter keystore password:  topbocor
+What is your first and last name?
+[Unknown]:  tuanbocor
+What is the name of your organizational unit?
+[Unknown]:  tuanbocor
+What is the name of your organization?
+[Unknown]:  tuanbocor
+What is the name of your City or Locality?
+[Unknown]:  tuanbocor
+What is the name of your State or Province?
+[Unknown]:  tuanbocor
+What is the two-letter country code for this unit?
+[Unknown]:  ID
+
+keytool -certreq -keyalg RSA -alias appbocor -file E:\EclipseProyek\bocor\appbocor.csr -keystore E:\EclipseProyek\bocor\appbocor.keystore
+
+E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl  x509  -req  -CA  E:\EclipseProyek\bocor\appbocor-ca-certificate.pem.txt -CAkey E:\EclipseProyek\bocor\appbocor-ca-key.pem.txt  -in E:\EclipseProyek\bocor\appbocor.csr -out E:\EclipseProyek\bocor\appbocor.csr  -days 365  -CAcreateserial
+
+
+openssl ca -config X509CA/openssl.cnf -days 365 -in CertName_csr.pem -out CertName.pem
+
+-------------------------------------------------------------------------
+
+----------------PART 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------
+
+1.registrasi key
+appbocor
+
+
+Tokyo ESP episode 1
+
+keytool -export -alias appbocor -keystore C:\Users\thatfeel\.android\debug.keystore | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl enc -a -e
+
+
+keytool -export -keystore C:\Users\thatfeel\.android\debug.keystore | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl enc -a -e
+
+
+keytool -export -alias androiddebugkey -keystore C:\Users\thatfeel\.android\debug.keystore | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | E:\EclipseProyek\epicmeme\openssl-0.9.8k_WIN32\bin\openssl enc -a -e 
+
+Tokyo Ghoul episode 2
+
+m3 sono kuroki
+
+pripara episode 2
+JmzYOYRSU9Vu4j6v3FKvgDNFvak=
